@@ -1,0 +1,11 @@
+<section>
+  <div class="btn-actions" *ngIf="imageUrl">
+    <button (click)="imageConfirm($event, true)">✅</button>
+    <button (click)="imageConfirm($event, false)">❌</button>
+  </div>
+  <div class="upload" (click)="file.click()">
+    <input class="input-file" type="file" #file (change)="getFile($event)" />
+    <p class="upload__file" *ngIf="!imageUrl">📸</p>
+    <img class="upload__img" *ngIf="imageUrl" [src]="imageUrl" alt="upload" />
+  </div>
+</section>

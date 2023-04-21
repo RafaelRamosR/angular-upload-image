@@ -1,0 +1,15 @@
+<main>
+  <article class="content">
+    <app-avatar
+      class="content__avatar"
+      *ngIf="!showUpload"
+      [imageUrl]="avatarUrl"
+      size="lg"
+    ></app-avatar>
+    <app-upload-avatar
+      [class.content__upload]="!showUpload"
+      (click)="showUpload = true"
+      (changeImage)="setNewImage($event)"
+    ></app-upload-avatar>
+  </article>
+</main>
